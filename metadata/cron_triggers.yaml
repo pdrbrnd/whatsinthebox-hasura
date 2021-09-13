@@ -1,0 +1,17 @@
+- name: daily_queue
+  webhook: '{{APP_URL}}/api/admin/queue/create'
+  schedule: 0 0 * * *
+  include_in_metadata: true
+  payload:
+    offset: 0
+  headers:
+  - name: authorization
+    value_from_env: APP_ADMIN_CODE
+- name: next_queue
+  webhook: '{{APP_URL}}/api/admin/queue/next'
+  schedule: '*/2 * * * *'
+  include_in_metadata: true
+  payload: {}
+  headers:
+  - name: authorization
+    value_from_env: APP_ADMIN_CODE
