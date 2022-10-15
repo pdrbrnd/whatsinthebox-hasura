@@ -1,0 +1,4 @@
+app = "whatsinthebox-hasura"
+
+[build]
+  image = "hasura/graphql-engine:v2.13.0"
