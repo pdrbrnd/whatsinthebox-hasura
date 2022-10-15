@@ -2,48 +2,48 @@
     schema: public
     name: channels
   select_permissions:
-  - role: anonymous
-    permission:
-      columns:
-      - id
-      - is_premium
-      - name
-      filter: {}
+    - role: anonymous
+      permission:
+        columns:
+          - id
+          - is_premium
+          - name
+        filter: {}
 - table:
     schema: public
     name: movies
   array_relationships:
-  - name: schedules
-    using:
-      foreign_key_constraint_on:
-        column: movie_id
-        table:
-          schema: public
-          name: schedules
+    - name: schedules
+      using:
+        foreign_key_constraint_on:
+          column: movie_id
+          table:
+            schema: public
+            name: schedules
   select_permissions:
-  - role: anonymous
-    permission:
-      columns:
-      - actors
-      - country
-      - created_at
-      - director
-      - genre
-      - id
-      - imdb_id
-      - language
-      - plot
-      - poster
-      - rating_imdb
-      - rating_metascore
-      - rating_rotten_tomatoes
-      - runtime
-      - title
-      - updated_at
-      - writer
-      - year
-      filter: {}
-      allow_aggregations: true
+    - role: anonymous
+      permission:
+        columns:
+          - actors
+          - country
+          - created_at
+          - director
+          - genre
+          - id
+          - imdb_id
+          - language
+          - plot
+          - poster
+          - rating_imdb
+          - rating_metascore
+          - rating_rotten_tomatoes
+          - runtime
+          - title
+          - updated_at
+          - writer
+          - year
+        filter: {}
+        allow_aggregations: true
 - table:
     schema: public
     name: queued_channels
@@ -51,21 +51,21 @@
     schema: public
     name: schedules
   object_relationships:
-  - name: channel
-    using:
-      foreign_key_constraint_on: channel_id
+    - name: channel
+      using:
+        foreign_key_constraint_on: channel_id
   select_permissions:
-  - role: anonymous
-    permission:
-      columns:
-      - title
-      - plot
-      - start_time
-      - end_time
-      - duration
-      - imdb_id
-      - id
-      - channel_id
-      - movie_id
-      filter: {}
-      allow_aggregations: true
+    - role: anonymous
+      permission:
+        columns:
+          - title
+          - plot
+          - start_time
+          - end_time
+          - duration
+          - imdb_id
+          - id
+          - channel_id
+          - movie_id
+        filter: {}
+        allow_aggregations: true

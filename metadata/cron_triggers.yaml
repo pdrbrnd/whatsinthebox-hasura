@@ -5,13 +5,13 @@
   payload:
     offset: 0
   headers:
-  - name: authorization
-    value_from_env: APP_ADMIN_CODE
+    - name: authorization
+      value_from_env: APP_ADMIN_CODE
 - name: next_queue
   webhook: '{{APP_URL}}/api/admin/queue/next'
   schedule: '*/2 * * * *'
   include_in_metadata: true
   payload: {}
   headers:
-  - name: authorization
-    value_from_env: APP_ADMIN_CODE
+    - name: authorization
+      value_from_env: APP_ADMIN_CODE
